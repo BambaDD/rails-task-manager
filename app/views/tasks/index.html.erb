@@ -1,0 +1,11 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <% if task.title.empty? %>
+      <li><%= link_to("pas de titre", task_path(task)) %></li>
+    <% else %>
+      <li><%= link_to(task.title, task_path(task)) %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to("New one", "/tasks/new")%>
